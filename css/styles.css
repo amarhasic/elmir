@@ -1,0 +1,418 @@
+/* General Reset */
+body, h1, h2, p, a, ul, li, nav {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: white;
+}
+
+body .privacy-policy-section {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: calc(100vh - 120px); /* Full viewport minus header and footer */
+    padding: 20px; /* Add padding for spacing */
+    background-color: black; /* Neutral background */
+}
+
+.privacy-policy-container {
+    max-width: 800px; /* Limit width for readability */
+    margin: 0 auto; /* Center the container */
+    line-height: 1.8; /* Improve text spacing */
+    color: white; /* Standard text color */
+    text-align: justify; /* Block-style justified text alignment */
+}
+
+.privacy-policy-container h1 {
+    font-size: 2rem; /* Larger heading */
+    font-weight: bold; /* Emphasize heading */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center the main heading */
+}
+
+.privacy-policy-container h2 {
+    font-size: 1.5rem; /* Subheading size */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold; /* Add emphasis */
+    text-align: center; /* Center subheadings */
+}
+
+.privacy-policy-container p,
+.privacy-policy-container ul {
+    font-size: 1rem; /* Standard text size */
+    margin-bottom: 15px; /* Space between paragraphs and lists */
+    color: #ccc; /* Subtle gray for contrast */
+}
+
+.privacy-policy-container ul {
+    padding-left: 20px; /* Indent for lists */
+    text-align: left; /* Align bullet points to the left */
+}
+
+.privacy-policy-container ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+@media (max-width: 768px) {
+    .privacy-policy-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+        font-size: 0.9rem; /* Slightly smaller text for better readability */
+    }
+}
+
+
+
+
+
+/* Header */
+.header {
+    background: #000;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    display: block;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.language-selector a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.language-selector a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Add responsive styles for header */
+@media (max-width: 767px) {
+    .header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        justify-items: center;
+        gap: 15px;
+    }
+
+    .logo,
+    .language-selector {
+        justify-self: center;
+    }
+}
+
+
+/* Split Screen Section */
+.split-screen {
+    display: flex;
+    flex-direction: column;
+}
+
+.split {
+    position: relative;
+    flex: 1;
+    min-height: 25vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.split:nth-child(1) {
+    background: url('../assets/about.jpg') no-repeat center/cover;
+}
+
+.split:nth-child(2) {
+    background: url('../assets/highlights.jpg') no-repeat center/cover;
+}
+
+.split:nth-child(3) {
+    background: url('../assets/achievements.jpg') no-repeat center/cover;
+}
+
+.split:nth-child(4) {
+    background: url('../assets/on-the-field.jpg') no-repeat center/cover;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.overlay span {
+    font-family: 'Lato', sans-serif; /* Use your custom font */
+    font-weight: 700; /* Bold text */
+    font-size: 1.5rem; /* Adjust size for readability */
+    color: white; /* Ensure text color is white */
+    text-decoration: none;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8); /* Add text shadow for contrast */
+}
+
+
+.overlay a {
+    color: white;
+    text-decoration: none;
+}
+
+.overlay a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+
+.overlay span.bold {
+    font-family: 'Lato-Bold', sans-serif;
+    font-weight: 700; /* Bold text */
+}
+
+.overlay:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 768px) {
+    .split-screen {
+        flex-direction: row;
+    }
+
+    .split {
+        min-height: 100vh;
+        flex: 1;
+    }
+}
+
+.legal-notice-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    min-height: calc(100vh - 120px); /* Account for header and footer */
+    padding: 20px;
+}
+
+.legal-notice-container {
+    max-width: 800px;
+    background-color: #000;
+    padding: 20px;
+    color: white;
+    line-height: 1.8; /* Increased for readability */
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.legal-notice-container h1, .legal-notice-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.legal-notice-container p a {
+    color: #00acee;
+    text-decoration: none;
+}
+
+.legal-notice-container p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .legal-notice-container {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+.cookies-policy-container {
+    max-width: 800px; /* Consistent width for readability */
+    margin: 0 auto; /* Center the container */
+    line-height: 1.8; /* Improve text spacing */
+    padding: 20px; /* Add spacing around text */
+    color: white; /* Standard text color */
+}
+
+.cookies-policy-container h1 {
+    font-size: 2rem; /* Larger heading */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* Center heading */
+}
+
+.cookies-policy-container h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.cookies-policy-container p,
+.cookies-policy-container ul {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #ccc; /* Subtle gray for contrast */
+}
+
+.cookies-policy-container a {
+    color: #ff4500; /* Highlight links */
+    text-decoration: none;
+}
+
+.cookies-policy-container a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+/* Footer Styles */
+.footer {
+    background-color: #000;
+    color: white;
+    padding: 60px 20px;
+    font-size: 0.9rem;
+    font-family: 'Lato-Bold', sans-serif;
+    font-weight: 700;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Legal Links */
+.footer-legal {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.footer-legal a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+/* Copyright Section */
+.footer-copyright {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Social Media Links */
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.footer-links a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-links img {
+    height: 20px;
+    width: 20px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: au center;
+    }
+
+    .footer-legal {
+        justify-content: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+@font-face {
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato-Regular.ttf') format('truetype'),
+         url('asse: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato-Bold.ttf') format('truetype'),
+         url('assets/fonts/Lato-Bold.woff2') format('woff2'),
+         url('assets/fonts/Lato-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+.about-section {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: calc(100vh - 120px); /* Adjust height to fill screen minus header and footer */
+    text-align: center; /* Center text */
+    padding: 20px;
+}
+
+.about-container {
+    max-width: 800px;
+}
+
+.about-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+
