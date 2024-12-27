@@ -7,6 +7,7 @@
     <meta name="description" content="Official website of professional football player Elmir Rizvanovic">
     <title>Elmir Rizvanovic | Official Website</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/main.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -18,51 +19,63 @@
                 </a>
             </div>
             <nav class="language-selector">
-                <a href="#" lang="de">DE</a> | <a href="#" lang="en">EN</a>
+                <a href="#" id="de-btn">DE</a> | <a href="#" id="en-btn">EN</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section with Split-Screen -->
+    <!-- Split Screen Section -->
     <section class="split-screen">
         <div class="split" id="about">
             <a href="https://www.elmirr.com/about">
                 <div class="overlay">
-                    <span>About Elmir</span>
+                    <span class="content-en">About Elmir</span>
+                    <span class="content-de" style="display: none">Über Elmir</span>
                 </div>
             </a>
         </div>
         <div class="split" id="highlights">
             <a href="https://www.elmirr.com/highlights">
                 <div class="overlay">
-                    <span>Highlights</span>
+                    <span class="content-en">Highlights</span>
+                    <span class="content-de" style="display: none">Highlights</span>
                 </div>
             </a>
         </div>
         <div class="split" id="achievements">
             <a href="https://www.elmirr.com/achievements">
                 <div class="overlay">
-                    <span>Achievements</span>
+                    <span class="content-en">Achievements</span>
+                    <span class="content-de" style="display: none">Erfolge</span>
                 </div>
             </a>
         </div>
         <div class="split" id="on-the-field">
             <a href="https://www.elmirr.com/on-the-field">
                 <div class="overlay">
-                    <span>On the Field</span>
+                    <span class="content-en">On the Field</span>
+                    <span class="content-de" style="display: none">Auf dem Platz</span>
                 </div>
             </a>
         </div>
     </section>
 
-
     <footer class="footer">
         <div class="footer-container">
             <!-- Legal Links -->
             <div class="footer-legal">
-                <a href="legal.html">Legal Notice</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="cookies.html">Cookies Policy</a>
+                <a href="legal.html">
+                    <span class="content-en">Legal Notice</span>
+                    <span class="content-de" style="display: none">Impressum</span>
+                </a>
+                <a href="privacy.html">
+                    <span class="content-en">Privacy Policy</span>
+                    <span class="content-de" style="display: none">Datenschutzerklärung</span>
+                </a>
+                <a href="cookies.html">
+                    <span class="content-en">Cookies Policy</span>
+                    <span class="content-de" style="display: none">Cookie-Richtlinie</span>
+                </a>
             </div>
     
             <!-- Copyright Text -->
@@ -88,10 +101,5 @@
             </div>
         </div>
     </footer>
-    
-    
-    
-
-
 </body>
 </html>

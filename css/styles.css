@@ -154,7 +154,27 @@ body .privacy-policy-section {
 .split:nth-child(4) {
     background: url('../assets/on-the-field.jpg') no-repeat center/cover;
 }
-
+.split .overlay span {
+    background: linear-gradient(135deg, #00ff87, #60efff); /* Keep the vibrant gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6), 0px 0px 6px rgba(96, 239, 255, 0.5); /* Enhanced shadow for better glow and depth */
+    padding: 8px 16px; /* Maintain the original padding */
+    background-color: rgba(10, 20, 30, 0.7); /* Deepened neutral background for contrast */
+    border-radius: 8px; /* Maintain the original radius */
+    backdrop-filter: blur(6px); /* Subtle glass effect with slight improvement */
+    box-shadow: 0 4px 12px rgba(10, 20, 30, 0.5), 0 0 8px rgba(96, 239, 255, 0.5); /* Subtle shadows for better definition */
+    transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+ }
+ 
+ .split .overlay span:hover {
+    background-color: rgba(15, 30, 45, 0.8); /* Slightly darker background on hover */
+    box-shadow: 0 6px 16px rgba(15, 30, 45, 0.6), 0 0 10px rgba(96, 239, 255, 0.7); /* Slightly stronger shadow on hover */
+ }
+ 
+ 
 .overlay {
     position: absolute;
     width: 100%;
@@ -168,14 +188,13 @@ body .privacy-policy-section {
     font-family: 'Lato', sans-serif; /* Use your custom font */
     font-weight: 700; /* Bold text */
     font-size: 1.5rem; /* Adjust size for readability */
-    color: white; /* Ensure text color is white */
     text-decoration: none;
     text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8); /* Add text shadow for contrast */
 }
 
 
 .overlay a {
-    color: white;
+    
     text-decoration: none;
 }
 

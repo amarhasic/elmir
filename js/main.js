@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const enButton = document.getElementById('en-btn');
     const deButton = document.getElementById('de-btn');
-    const contentEn = document.querySelector('.content-en');
-    const contentDe = document.querySelector('.content-de');
+    const contentEn = document.querySelectorAll('.content-en');
+    const contentDe = document.querySelectorAll('.content-de');
 
     enButton.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent link behavior
-        contentEn.style.display = 'block';
-        contentDe.style.display = 'none';
+        e.preventDefault();
+        contentEn.forEach(element => element.style.display = 'block');
+        contentDe.forEach(element => element.style.display = 'none');
     });
 
     deButton.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent link behavior
-        contentEn.style.display = 'none';
-        contentDe.style.display = 'block';
+        e.preventDefault();
+        contentEn.forEach(element => element.style.display = 'none');
+        contentDe.forEach(element => element.style.display = 'block');
     });
 });
