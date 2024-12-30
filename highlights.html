@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Highlights | Elmir Rizvanovic</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        .main-content {
+            background: #1a1a1a;
+            min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-container {
+            width: 75vw;
+            padding: 20px;
+        }
+        
+        .title-highlights {
+            text-align: center;
+
+            margin: 0 0 20px 0;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            font-family: 'Lato' !important;
+        }
+        #player {
+            width: 100%;
+            aspect-ratio: 16/9;
+            max-height: calc(75vh - 100px);
+        }
+        :root {
+            --plyr-control-icon-size: 24px;
+            --plyr-control-spacing: 16px;
+            --plyr-font-size-menu: 18px;
+            --plyr-badge-font-size: 12px;
+        }
+        .plyr__controls button[data-plyr="play"] {
+            transform: scale(1.1);
+        }
+        .plyr__control svg {
+            transform: scale(1.2);
+        }
+        .plyr__control--overlaid {
+            transform: scale(1.5);
+        }
+
+        @font-face {
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato-Bold.ttf') format('truetype'),
+         url('assets/fonts/Lato-Bold.woff2') format('woff2'),
+         url('assets/fonts/Lato-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+    </style>
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Go to home">
+                    <img src="assets/logo.png" alt="Elmir Rizvanovic Logo">
+                </a>
+            </div>
+            <nav class="language-selector">
+                <a href="#" id="en-btn" lang="en">EN</a> | 
+                <a href="#" id="de-btn" lang="de">DE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="video-container">
+            <h1 class="title-highlights">Elmir Highlights</h1>
+            <video id="player" playsinline controls>
+                <source src="assets/highlights.mp4" type="video/mp4">
+            </video>
+        </div>
+    </main>
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-legal">
+            <a href="legal.html">Legal Notice</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="cookies.html">Cookies Policy</a>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 <span>Elmir Rizvanovic</span></p>
+        </div>
+        <div class="footer-links">
+            <a href="mailto:hello@elmirr.com" class="footer-email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/elmir.rzv7/" target="_blank" class="footer-instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script>
+        const player = new Plyr('#player', {
+            controls: [
+                'play-large',
+                'play',
+                'progress',
+                'current-time',
+                'mute',
+                'volume',
+                'fullscreen'
+            ]
+        });
+    </script>
+</body>
+</html>
