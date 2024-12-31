@@ -6,10 +6,12 @@
     <title>Soccer Highlights | Elmir Rizvanovic</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
     <style>
         .main-content {
             background: #1a1a1a;
-            min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+            min-height: calc(100vh - 200px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,47 +21,46 @@
             padding: 20px;
         }
         
-        .title-highlights {
-            text-align: center;
-
-            margin: 0 0 20px 0;
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.02em;
-            font-family: 'Lato' !important;
-        }
         #player {
             width: 100%;
-            aspect-ratio: 16/9;
-            max-height: calc(75vh - 100px);
-        }
-        :root {
-            --plyr-control-icon-size: 24px;
-            --plyr-control-spacing: 16px;
-            --plyr-font-size-menu: 18px;
-            --plyr-badge-font-size: 12px;
-        }
-        .plyr__controls button[data-plyr="play"] {
-            transform: scale(1.1);
-        }
-        .plyr__control svg {
-            transform: scale(1.2);
-        }
-        .plyr__control--overlaid {
-            transform: scale(1.5);
+            height: 100%;
+            max-width: 100vw;
+            max-height: 100vh;
         }
 
-        @font-face {
-    font-family: 'Lato';
-    src: url('assets/fonts/Lato-Bold.ttf') format('truetype'),
-         url('assets/fonts/Lato-Bold.woff2') format('woff2'),
-         url('assets/fonts/Lato-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
+        /* Fullscreen styles */
+        :root {
+            --plyr-video-background: #000;
+            --plyr-video-background: #000;
+            --plyr-control-icon-size: 8px;        /* Add this to make controls smaller */
+            --plyr-control-spacing: 10px;          /* Add this to reduce spacing */
+            --plyr-font-size-base: 14px;          /* Add this for smaller text */
+        }
+
+        .plyr--video {
+            height: 100%;
+        }
+
+        .plyr--fullscreen-active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .plyr--fullscreen-active video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        
+
     </style>
     <script defer src="js/main.js"></script>
 </head>
@@ -118,19 +119,33 @@
     </div>
 </footer>
 
-    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-    <script>
-        const player = new Plyr('#player', {
-            controls: [
-                'play-large',
-                'play',
-                'progress',
-                'current-time',
-                'mute',
-                'volume',
-                'fullscreen'
-            ]
-        });
-    </script>
+<script>
+    const player = new Plyr('#player', {
+        controls: [
+            'play-large',
+            'play',
+            'progress',
+            'current-time',
+            'mute',
+            'volume',
+            'fullscreen'
+        ],
+        ratio: '16:9',
+        fullscreen: {
+            enabled: true,
+            fallback: true,
+            iosNative: true
+        },
+        resetOnEnd: false,
+        clickToPlay: true,
+        hideControls: true
+    });
+
+    // Handle fullscreen changes
+    player.on('enterfullscreen', () => {
+        player.elements.container.style.height = '100%';
+        player.elements.wrapper.style.height = '100%';
+    });
+</script>
 </body>
 </html>
